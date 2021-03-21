@@ -15,7 +15,17 @@ const addOne = (arr) => {
   });
   return arr;
 };
+/*
 
+const addOne = (arr) => {
+  // Solution code here...
+  let newArr=[];
+  arr.forEach(element => {
+    newArr.push(element+1);
+  });
+  return newArr;
+};
+*/
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,9 +36,18 @@ Write a function named `addExclamation` that takes an array of strings, and retu
 Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
+
+
+
 const addExclamation = (arr) => {
   // Solution code here...
+  let newArr=[];
+  arr.forEach(element => {
+    newArr.push(element+'!');
+  });
+  return newArr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3

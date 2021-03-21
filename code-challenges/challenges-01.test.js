@@ -180,8 +180,23 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
+
+
 const fizzbuzz = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.forEach((element) => {
+    if (element % 3 === 0 && element % 5 === 0) {
+      newArr.push('Fizz Buzz');
+    } else if (element % 3 === 0) {
+      newArr.push('Fizz');
+    } else if (element % 5 === 0) {
+      newArr.push('Buzz');
+    } else {
+      newArr.push(element);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

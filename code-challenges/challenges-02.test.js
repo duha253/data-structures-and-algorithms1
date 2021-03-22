@@ -7,11 +7,12 @@ CHALLENGE 1 - Review
 Write a function named raisedToTheThird that takes in an array of numbers and returns a new array of each of those numbers raised to the 3rd power (hint: look up Math.pow()). Use forEach to solve this problem.
 
 ------------------------------------------------------------------------------------------------ */
-//from (Math Chapter 1. Basic JavaScript
+
 const raisedToTheThird = (arr) => {
   // Solution code here...
   const newArr=[];
   arr.forEach(element => {
+    //from (Math Chapter 1. Basic JavaScript
     newArr.push(Math.pow(element,3));
   });
   return newArr;
@@ -26,6 +27,9 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
+  //i think that ; not modified so str=str+' The end.';and return str; its wrong answer;so
+  return str+' The end.';
+
 };
 
 /* ------------------------------------------------------------------------------------------------

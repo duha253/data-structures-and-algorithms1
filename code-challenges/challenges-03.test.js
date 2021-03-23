@@ -42,7 +42,7 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 
-const sortNames = (arr) => {
+/*const sortNames = (arr) => {
   // Solution code here...
   arr.sort((a,b) => {
   if (a < b) {
@@ -54,7 +54,11 @@ const sortNames = (arr) => {
   }
 
   return 0;
-}
+}*/
+const sortNames = (arr) => {
+  // Solution code here...
+  return arr.sort();
+};
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,9 +68,9 @@ Write a function called sortNumbers that takes an array of numbers and sorts the
 
 HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
-
 const sortNumbers = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => a - b);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,6 +83,10 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => {
+    return b - a;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,8 +101,11 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => {
+    return a - b;
+  });
+  return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -110,8 +121,8 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => a.price - b.price);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 

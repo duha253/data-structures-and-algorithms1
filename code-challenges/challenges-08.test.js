@@ -24,8 +24,9 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
+  let newarr= arr.filter(element => Number(element));
+  return newarr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -34,9 +35,13 @@ Write a function named containsAnd that, given an array of strings as input, use
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
+
 const containsAnd = (arr) => {
   // Solution code here...
+  let newarr= arr.filter(element => element.includes('and'));
+  return newarr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -63,10 +68,13 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 
+
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  let reg = /A|E|O|U|I/i;
+  let newARR= arr.filter(element => reg.test(element));
+  return newARR;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6

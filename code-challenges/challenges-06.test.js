@@ -56,8 +56,23 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  charArray.sort((a, b) => {
+    if (a.children.length < b.children.length) {
+      return -1;
+    } else if (a.children.length > b.children.length) {
+      return 1;
+    } else if (a.children.length === b.children.length) {
+      if (a.house < b.house) {
+        return -1;
+      } else if (a.house > b.house) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  });
+  return charArray;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -72,8 +87,9 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
-};
+  return Object.keys(obj);
 
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -84,19 +100,24 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
+  let boolean=false;
+  let vals=Object.values(obj);
+  vals.forEach(element=>{
+    if(element===value) {boolean=true;}
+  });
+  return boolean;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-You are given an object with names and their coresponding phone numbers that looks like this: 
+You are given an object with names and their coresponding phone numbers that looks like this:
 {
   'Grace Hopper': '222-303-5938',
   'Ada Lovelace': '222-349-9842',
   'Alan Turing': '222-853-5933'
 }
 
-HR has asked you to change the data to make it easier to print so that it looks like this: 
+HR has asked you to change the data to make it easier to print so that it looks like this:
 [
   'Grace Hopper: 222-303-5938',
   'Ada Lovelace: 222-349-9842',
@@ -107,8 +128,12 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  let newArray=[];
+  Object.entries(obj).forEach(value =>{
+    newArray.push(value.join(': '));
+  });
+  return newArray;
 };
-
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,9 +145,11 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.forEach(houseName => {
+    houses.push(houseName.house);
+  });
   return houses;
 };
-
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -137,7 +164,13 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  let bools=false;
+  arr.forEach(element=>{
+    if(element.name===character){
+      bools=true;
+    }
+  });
+  return bools;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -242,7 +275,7 @@ describe('Testing challenge 4', () => {
       'Grace Hopper': '222-303-5938',
       'Ada Lovelace': '222-349-9842',
       'Alan Turing': '222-853-5933'
-    }
+    };
 
     expect(updateNumbers(startingObj).includes('Grace Hopper: 222-303-5938')).toBe(true);
   });

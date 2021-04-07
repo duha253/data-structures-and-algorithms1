@@ -12,13 +12,13 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 
-
 const toLastNames = (people) => {
   // Solution code here...
   return people.map((e) => {
     return `${e.firstName} ${e.lastName}`;
   });
 };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -41,8 +41,10 @@ Write a function named validateWord that uses a regular expression pattern to va
 If the word is between 5 and 10 characters long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
+
 const validateWord = (word) => {
   // Solution code here...
+  return /^[a-zA-Z]{5,10}$/g.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +57,10 @@ If it does, return true. If not, return false.
 
 const hasNumber = (string) => {
   // Solution code here...
+  let regex=/[A-Z a-z]\d/;
+  return regex.test(string);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -72,13 +77,12 @@ Return either true or false.
 
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
-
-
 const validateEmail = (email) => {
   // Solution code here...
   const emailPatt = /^[A-Za-z0-9]+\.?[A-Za-z0-9]+?@[A-Za-z0-9]+.(net|com|org)$/;
   return emailPatt.test(email);
 };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -102,8 +106,9 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  const checkNumber = /^([(]\d{3}[)]|\d{3}?)[-\s]?\d{3}?[-\s]?\d{4}$/g;
+  return checkNumber.test(phoneNumber);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
